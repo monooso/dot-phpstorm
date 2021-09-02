@@ -1,0 +1,44 @@
+let mapleader = " "
+
+set hlsearch            " Highlight text matching the last search
+set ignorecase          " Ignore case in searches...
+set smartcase=scs       " ...unless the search term contains uppercase letters
+set incsearch           " Improve search highlighting
+set scrolloff=5         " Minimum number of lines above and below cursor
+set showmode=on         " Show current mode on status line
+set number              " Enable line numbers...
+set relativenumber      " ...make them relative
+
+" Clear search highlighting
+nnoremap <Leader>h :nohls<CR>
+
+" <C-l> to escape
+inoremap <C-l> <Esc>
+xnoremap <C-l> <Esc>
+
+" ---------------------------------------------------------
+" IdeaVim-specific settings
+" ---------------------------------------------------------
+set ideajoin            " Enable fancy-pants line joining
+set commentary          " Enable the Vim Commentary plugin
+set highlightedyank     " Enable the Highlighted Yank plugin
+set surround            " Enable the Vim Surround plugin
+
+" Forward and back
+nnoremap <C-o> :action Back<CR>
+nnoremap <C-i> :action Forward<CR>
+
+" [F]ile navigation
+nnoremap <Leader>ff :action GotoFile<CR>
+nnoremap <Leader>fs :action FileStructurePopup<CR>
+
+" [J]ump
+nnoremap <Leader>jd :action GotoDeclaration<CR>
+nnoremap <Leader>jm :action GotoSuperMethod<CR>
+nnoremap <Leader>ju :action ShowUsages<CR>
+
+" [K]ode actions
+nnoremap <Leader>ka :action GotoAction<CR>
+nnoremap <Leader>kf :action ReformatCode<CR>
+nnoremap <Leader>ki :action Inline<CR>
+nnoremap <Leader>kr :action RenameElement<CR>
